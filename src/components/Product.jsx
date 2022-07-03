@@ -11,7 +11,7 @@ const Product = (props) => {
 
         <Card className="cardClass">
             <div style={{textAlign: 'center'}}>
-            <Card.Img  className="card-image" variant="top" src={placeholderImagePath} />
+                <Card.Img  className="card-image" variant="top" src={placeholderImagePath} />
             </div>
         
             <Card.Body>

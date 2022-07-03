@@ -4,8 +4,8 @@
 }
 
 .cardClass {
-  
-    max-width: 100%;
+    width: 200px;
+    max-width: 70%;
     height: 400px;
 }
 
