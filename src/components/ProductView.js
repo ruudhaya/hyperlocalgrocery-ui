@@ -16,10 +16,6 @@ const ProductView = () => {
       console.log("Filter Values set..", filter)
     }
     
-    const getFilteredProducts = (term) => {
-      return term.length > 0 ? products.filter((product) => product.name.startsWith(term)) : products
-    }
-
     useEffect(() => {
       if (filter.length > 0) {
         setFilteredProducts(products.filter((product) => product.name.startsWith(filter)))

@@ -17,15 +17,20 @@ const Product = (props) => {
             <Card.Body>
             <div className="card-text-body">
                 <Card.Title>{product.name}</Card.Title>
-                <Card.Text>{product.mrp}</Card.Text>
+                <Card.Text> MRP ₹{product.mrp}</Card.Text>
                 {
                     product.discount > 0 ? <Card.Text>{product.discount}%</Card.Text> : <></>
                 }
                 
-                <Card.Title>{product.discountedSellingPrice}</Card.Title>
-                <Button className="card-btn" variant="primary">Add to Cart</Button>
             </div>
             </Card.Body>
+            <div className="d-flex justify-content-between align-content-center">
+            <Card.Title className="product-price">₹{product.discountedSellingPrice}</Card.Title>
+            
+                <Button className="card-btn" variant="primary">
+                    Add    
+                </Button>
+                </div>
         </Card>
     )
 }

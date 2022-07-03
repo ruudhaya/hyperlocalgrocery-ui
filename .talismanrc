@@ -1,6 +1,6 @@
 fileignoreconfig:
 - filename: package-lock.json
-  checksum: 8107859334082baee1e53f221f2d271e6db80e1b45a52026ee74086c3e93c712
+  checksum: fbad843287c8b8d2f98ab957d5999c763367d5f4a4feaed17cbeb1782248b405
 - filename: src/components/ProductList.jsx
   checksum: 548a18b54c00d0672eaf276d6d4b1490cc18ebf5b8267523625f217a33c1ec5d
 version: "1.0"
