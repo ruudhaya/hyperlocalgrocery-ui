@@ -5,9 +5,29 @@ import { Spinner } from 'react-bootstrap'
 
 const ProductView = () => {
 
+    const [filter, setFilter] = useState("")
     const [products, setProducts] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
+    const updateFilter = (filterTerm) => {
+      console.log(filterTerm)
+      setFilter(filterTerm)
+      console.log("Filter Values set..", filter)
+    }
+    
+    const getFilteredProducts = (term) => {
+      return term.length > 0 ? products.filter((product) => product.name.startsWith(term)) : products
+    }
+
+    useEffect(() => {
+      if (filter.length > 0) {
+        setFilteredProducts(products.filter((product) => product.name.startsWith(filter)))
+      } else {
+        setFilteredProducts(products)
+      }
+    }, [filter, products])
+    
     useEffect(() => {
         function getData(url){
             return new Promise((resolve, reject) => {
@@ -43,12 +63,12 @@ const ProductView = () => {
     
   return (
     <div>
-        <SearchBox />
+        <SearchBox updateFilter={updateFilter}/>
         {loading ? 
             <Spinner animation="grow" role="status">
                 <span className="visually-hidden">Loading...</span>
             </Spinner> : 
-            <ProductList products = {products}/>
+            <ProductList products = {filteredProducts}/>
         }
     </div>
   )
